@@ -1,0 +1,32 @@
+-- TODO: see polish.lua (moved there because of hotkeys erasing)
+return {
+  "akinsho/toggleterm.nvim",
+  -- config = function()
+  --   local Terminal = require("toggleterm.terminal").Terminal
+  --
+  --   local claude_term = Terminal:new {
+  --     cmd = "claude",
+  --     dir = "git_dir",
+  --     direction = "vertical",
+  --     size = 50,
+  --     close_on_exit = true,
+  --     hidden = true,
+  --   }
+  --
+  --   -- local claude_term_history = Terminal:new {
+  --   --   cmd = "claude --resume",
+  --   --   dir = "git_dir",
+  --   --   direction = "vertical",
+  --   --   size = 50,
+  --   --   close_on_exit = true,
+  --   --   hidden = true,
+  --   -- }
+  --
+  --   vim.keymap.set(
+  --     "n",
+  --     "<leader>c",
+  --     function() claude_term:toggle() end,
+  --     { desc = "Toggle Claude terminal (vertical)" }
+  --   )
+  -- end,
+}
