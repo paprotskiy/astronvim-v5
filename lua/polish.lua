@@ -43,12 +43,18 @@ local run_claude = function(command)
   return function()
     local util = require "lspconfig.util"
     local root_dir = util.root_pattern(".git", "lua", "Makefile")(vim.fn.expand "%:p") or vim.loop.cwd() -- fallback if no root is found
-    dir = vim.fn.expand "%:p:h"
+    local dir = vim.fn.expand "%:p:h"
 
     vim.system({
       "sh",
       "-c",
-      "zed " .. root_dir .. '& tmux split-window -h "cd ' .. dir .. "&&" .. command .. '"',
+      -- "zed " ..
+      root_dir
+        .. '& tmux split-window -h "cd '
+        .. dir
+        .. "&&"
+        .. command
+        .. '"',
     }, { detach = true })
   end
 end
