@@ -1,7 +1,19 @@
 return {
   "sindrets/diffview.nvim",
   config = function()
-    require("diffview").setup {}
+    vim.opt.fillchars:append { diff = " " }
+    require("diffview").setup {
+      hooks = {
+        diff_buf_win_enter = function(bufnr, winid, ctx)
+          vim.defer_fn(function()
+            if not vim.api.nvim_win_is_valid(winid) then return end
+            if vim.wo[winid].winbar ~= "" then return end
+            local name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":t")
+            if name ~= "" then vim.wo[winid].winbar = name end
+          end, 100)
+        end,
+      },
+    }
 
     local poll_timer = nil
 

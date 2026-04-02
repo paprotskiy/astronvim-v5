@@ -15,10 +15,13 @@ return {
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#000000" },
+        Normal = {
+          -- INFO: setting color to nil makes background transparent
+          bg = nil, -- "#000000"
+        },
         DiffAdd = { bg = "#0a2b2b" },
         DiffChange = { bg = "#333208" },
-        DiffDelete = { bg = "#4b1818" },
+        DiffDelete = { bg = "#2C0E0E" },
         DiffText = { bg = "#663300" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
