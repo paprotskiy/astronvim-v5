@@ -17,9 +17,9 @@ return {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
         DiffAdd = { bg = "#0a2b2b" },
-        DiffChange = { bg = "#332b08" },
+        DiffChange = { bg = "#333208" },
         DiffDelete = { bg = "#4b1818" },
-        DiffText = { bg = "#9a4d00" },
+        DiffText = { bg = "#663300" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
